@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express(),
       bodyParser = require("body-parser");
-      port = 8081;
+      
 
 const users = [];
 
@@ -22,6 +22,4 @@ app.get('/', (req,res) => {
   res.sendFile(process.cwd()+"/my-app/dist/angular-nodejs-example/index.html")
 });
 
-app.listen(port, () => {
-    console.log(`Server listening on the port::${port}`);
-});
+app.listen(process.env.PORT || 5000)
